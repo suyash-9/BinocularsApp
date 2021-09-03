@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Binoculars</string>
+    <string name="to_capture">to_capture</string>
+    <string name="Take_Photo">Take Photo</string>
+    <string name="use_system_camera">Use system camera</string>
+    <string name="open_barcode_activity">Open Barcode Activity</string>
+    <string name="open_camera_activity">open camera activity</string>
+    <string name="open_image_label_activity">Open Image Label Activity</string>
+    <string name="open_face_detect_activity">Open Face Detect Activity</string>
+    <string name="open_text_recognition_activity">Open Text Recognition Activity</string>
+    <string name="todo">TODO</string>
+    <string name="show_result">Show Result</string>
+    <string name="result">Result</string>
+</resources>
