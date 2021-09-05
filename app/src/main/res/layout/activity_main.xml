@@ -6,79 +6,85 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <ImageView
-        android:id="@+id/image"
-        android:layout_width="171dp"
-        android:layout_height="172dp"
-        android:layout_marginTop="96dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@tools:sample/avatars"
-        android:contentDescription="@string/todo" />
+<!--    <ImageView-->
+<!--        android:id="@+id/image"-->
+<!--        android:layout_width="171dp"-->
+<!--        android:layout_height="172dp"-->
+<!--        android:layout_marginTop="96dp"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        tools:srcCompat="@tools:sample/avatars"-->
+<!--        android:contentDescription="@string/todo" />-->
 
-    <Button
-        android:id="@+id/takepicbtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/use_system_camera"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/image"
-        app:layout_constraintVertical_bias="0.267" />
+<!--    <Button-->
+<!--        android:id="@+id/takepicbtn"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="@string/use_system_camera"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.498"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/image"-->
+<!--        app:layout_constraintVertical_bias="0.267" />-->
 
-    <Button
-        android:id="@+id/buttonActivitybtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/open_camera_activity"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/takepicbtn"
-        app:layout_constraintVertical_bias="0.106" />
+<!--    <Button-->
+<!--        android:id="@+id/buttonActivitybtn"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="@string/open_camera_activity"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/takepicbtn"-->
+<!--        app:layout_constraintVertical_bias="0.106" />-->
 
-    <Button
-        android:id="@+id/btnBarcodeActivity"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/open_barcode_activity"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonActivitybtn" />
+<!--    <Button-->
+<!--        android:id="@+id/btnBarcodeActivity"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="@string/open_barcode_activity"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/buttonActivitybtn" />-->
 
-    <Button
-        android:id="@+id/btnFaceDetectActivity"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/open_face_detect_activity"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnBarcodeActivity" />
+<!--    <Button-->
+<!--        android:id="@+id/btnFaceDetectActivity"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="@string/open_face_detect_activity"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/btnBarcodeActivity" />-->
 
-    <Button
-        android:id="@+id/btnLabelerActivity"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/open_image_label_activity"
-        app:layout_constraintBottom_toTopOf="@+id/btnBarcodeActivity"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonActivitybtn" />
+<!--    <Button-->
+<!--        android:id="@+id/btnLabelerActivity"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="@string/open_image_label_activity"-->
+<!--        app:layout_constraintBottom_toTopOf="@+id/btnBarcodeActivity"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/buttonActivitybtn" />-->
 
-    <Button
-        android:id="@+id/btnTextRecogActivity"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:text="@string/open_text_recognition_activity"
-        app:layout_constraintBottom_toTopOf="@+id/image"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent" />
+<!--    <Button-->
+<!--        android:id="@+id/btnTextRecogActivity"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginBottom="16dp"-->
+<!--        android:text="@string/open_text_recognition_activity"-->
+<!--        app:layout_constraintBottom_toTopOf="@+id/image"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.495"-->
+<!--        app:layout_constraintStart_toStartOf="parent" />-->
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/binocularRV"
+        android:layout_width="409dp"
+        android:layout_height="729dp"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="1dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
