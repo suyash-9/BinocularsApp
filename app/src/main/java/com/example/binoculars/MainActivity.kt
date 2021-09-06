@@ -14,8 +14,11 @@ import kotlinx.android.synthetic.main.activity_main.*
 class MainActivity : AppCompatActivity(),RecyclerAdapter.OnItemClickListener {
     //lateinit var str:String
     companion object{
-        @JvmStatic val PHOTO_REQ_CODE=234
-        @JvmStatic val EXTRA_DATA="data"
+        @JvmStatic
+        val PHOTO_REQ_CODE=234
+
+        @JvmStatic
+        val EXTRA_DATA="data"
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {

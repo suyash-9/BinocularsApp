@@ -11,6 +11,18 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
+
+    <TextView
+        android:id="@+id/result_text_view"
+        android:textAlignment="center"
+        android:gravity="center"
+        android:textSize="18sp"
+        android:background="#8B000000"
+        android:textColor="@color/white"
+        android:layout_gravity="bottom"
+        android:layout_width="match_parent"
+        android:layout_height="256dp"/>
+
     <Button
         android:layout_margin="10dp"
         android:layout_gravity="bottom|center_horizontal"
@@ -29,5 +41,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.925" />
+
+
 
 </FrameLayout>

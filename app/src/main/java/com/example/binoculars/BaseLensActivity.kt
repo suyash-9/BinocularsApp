@@ -29,6 +29,7 @@ abstract class BaseLensActivity : AppCompatActivity() {
     abstract val imageAnalyzer: ImageAnalysis.Analyzer
     //abstract val str:String
     protected lateinit var imageAnalysis: ImageAnalysis
+    private var isScannerOn = false
 
     private fun askCameraPermission() {
         ActivityCompat.requestPermissions(
@@ -70,13 +71,26 @@ abstract class BaseLensActivity : AppCompatActivity() {
 
     abstract fun startScanner()
 
+    open fun stopScanner() {
+        imageAnalysis.clearAnalyzer()
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_base_lens)
         askCameraPermission()
 
         btnStartScanner.setOnClickListener {
-            startScanner()
+            // invert the scanner status
+            isScannerOn=!isScannerOn
+            // if the scanner is on, then turn it off and vice-versa
+            if(isScannerOn) {
+                stopScanner()
+                btnStartScanner.text = "start scanner"
+            } else {
+                startScanner()
+                btnStartScanner.text = "stop scanner"
+            }
         }
 
     }

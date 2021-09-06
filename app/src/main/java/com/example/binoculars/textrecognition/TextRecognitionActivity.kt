@@ -1,15 +1,20 @@
 package com.example.binoculars.textrecognition
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.core.content.ContextCompat
 import com.example.binoculars.BaseLensActivity
 import com.example.binoculars.BottomSheetFragment
 import kotlinx.android.synthetic.main.activity_base_lens.*
-import kotlinx.android.synthetic.main.bottomsheet_fragment.*
 
 class TextRecognitionActivity : BaseLensActivity() {
-    override val imageAnalyzer = TextAnalyzer()
+    override val imageAnalyzer = TextAnalyzer(
+        onSuccessListener =  { result ->
+            result_text_view.text = result
+        },
+        onErrorListener = {
+
+        }
+    )
 
     override fun startScanner() {
         startTextRecognition()
