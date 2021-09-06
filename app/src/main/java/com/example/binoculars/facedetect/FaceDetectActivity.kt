@@ -9,7 +9,16 @@ import kotlinx.android.synthetic.main.activity_base_lens.*
 import kotlinx.android.synthetic.main.bottomsheet_fragment.*
 
 class FaceDetectActivity : BaseLensActivity() {
-    override val imageAnalyzer = FaceDetectAnalyzer()
+    var str=""
+    override val imageAnalyzer = FaceDetectAnalyzer(
+        onSuccessListener =  { result ->
+            //ansView.text = result
+            str=result
+        },
+        onErrorListener = {
+
+        }
+    )
 
     override fun startScanner() {
         startFaceDetect()
@@ -27,6 +36,9 @@ class FaceDetectActivity : BaseLensActivity() {
         val bottomSheetFragment = BottomSheetFragment()
         bottombtn.setOnClickListener {
             bottomSheetFragment.show(supportFragmentManager, "BottomSheetDialog")
+            val b = Bundle()
+            b.putString("Ans_key",str)
+            bottomSheetFragment.setArguments(b)
         }
     }
 }

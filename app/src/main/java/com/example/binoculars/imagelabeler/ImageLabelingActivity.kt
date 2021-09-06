@@ -9,7 +9,16 @@ import kotlinx.android.synthetic.main.activity_base_lens.*
 import kotlinx.android.synthetic.main.bottomsheet_fragment.*
 
 class ImageLabelingActivity : BaseLensActivity() {
-    override val imageAnalyzer = ImageLabelAnalyzer()
+    var str=""
+    override val imageAnalyzer = ImageLabelAnalyzer(
+        onSuccessListener =  { result ->
+            //ansView.text = result
+            str=result
+        },
+        onErrorListener = {
+
+        }
+    )
 
     override fun startScanner() {
         startImageLabeling()
@@ -27,6 +36,9 @@ class ImageLabelingActivity : BaseLensActivity() {
         val bottomSheetFragment = BottomSheetFragment()
         bottombtn.setOnClickListener {
             bottomSheetFragment.show(supportFragmentManager, "BottomSheetDialog")
+            val b = Bundle()
+            b.putString("Ans_key",str)
+            bottomSheetFragment.setArguments(b)
         }
     }
 }

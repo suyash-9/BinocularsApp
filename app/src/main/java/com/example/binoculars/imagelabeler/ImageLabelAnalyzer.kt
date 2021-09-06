@@ -8,7 +8,8 @@ import com.google.mlkit.vision.common.InputImage
 import com.google.mlkit.vision.label.ImageLabeling
 import com.google.mlkit.vision.label.defaults.ImageLabelerOptions
 
-class ImageLabelAnalyzer : ImageAnalysis.Analyzer {
+class ImageLabelAnalyzer(private val onSuccessListener : (String) -> Unit,
+                         private val onErrorListener : (Exception) -> Unit) : ImageAnalysis.Analyzer {
 
     private val labeler = ImageLabeling.getClient(
         ImageLabelerOptions.Builder()
@@ -29,6 +30,7 @@ class ImageLabelAnalyzer : ImageAnalysis.Analyzer {
 
             labeler.process(inputImage)
                 .addOnSuccessListener { labels ->
+                    var result=""
                     labels.forEach { label ->
                         Log.d(
                             "LABEL", """
@@ -36,9 +38,12 @@ class ImageLabelAnalyzer : ImageAnalysis.Analyzer {
                             Value = ${label.confidence}
                         """.trimIndent()
                         )
+                        result+="  The object detected is  ${label.text}  "
                     }
+                    onSuccessListener(result)
                 }
                 .addOnFailureListener { ex ->
+                    onErrorListener(ex)
                     Log.e("LABEL", "Detection failed", ex)
                 }
                 .addOnCompleteListener {

@@ -20,11 +20,11 @@ class BottomSheetFragment: BottomSheetDialogFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        var a= getArguments()?.getString("Analyzer_key")
+        var a= getArguments()?.getString("Ans_key")
 
         showBTN.setOnClickListener {
             //val textView = findViewById(R.id.ansView) as TextView
-            ansView.text = getArguments()?.getString("Analyzer_key")
+            ansView.text = a
         }
     }
 }

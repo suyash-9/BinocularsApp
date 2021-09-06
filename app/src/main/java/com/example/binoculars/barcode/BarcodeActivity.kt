@@ -12,13 +12,21 @@ import kotlinx.android.synthetic.main.activity_base_lens.*
 
 class BarcodeActivity : BaseLensActivity() {
     //val str= intent.getStringExtra("Ans").toString()
-   var str="Hi"
+   var str=""
 
 //    private var bottomSheetBehaviour: BottomSheetBehavior<View?>? = null
 //    bottomSheetBehaviour.setState(BottomSheetBehaviour.STATE_HIDDEN)
 
     //override val str=""
-    override val imageAnalyzer = BarcodeAnalyzer()
+    override val imageAnalyzer = BarcodeAnalyzer(
+        onSuccessListener =  { result ->
+            //ansView.text = result
+            str=result
+        },
+        onErrorListener = {
+
+        }
+    )
     override fun startScanner() {
         scanBarcode()
     }
@@ -38,9 +46,9 @@ class BarcodeActivity : BaseLensActivity() {
         var bottomSheetFragment = BottomSheetFragment()
         bottombtn.setOnClickListener {
             bottomSheetFragment.show(supportFragmentManager,"BottomSheetDialog")
-//            val b = Bundle()
-//            b.putString("Ans_key",str)
-//            bottomSheetFragment.setArguments(b)
+            val b = Bundle()
+            b.putString("Ans_key",str)
+            bottomSheetFragment.setArguments(b)
 //            val textView = findViewById<TextView>(R.id.ansView)
 //            textView.text = str
             //startActivity(Intent(this, BarcodeAnalyzerActivity::class.java))

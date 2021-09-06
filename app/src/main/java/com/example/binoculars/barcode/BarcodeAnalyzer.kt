@@ -7,12 +7,14 @@ import android.widget.Toast
 import androidx.camera.core.ImageAnalysis
 import androidx.camera.core.ImageProxy
 import com.example.binoculars.BottomSheetFragment
+import com.example.binoculars.R
 import com.google.mlkit.vision.common.InputImage
 import com.google.mlkit.vision.barcode.BarcodeScanning
 
 
 
-class BarcodeAnalyzer() : ImageAnalysis.Analyzer {
+class BarcodeAnalyzer(private val onSuccessListener : (String) -> Unit,
+                      private val onErrorListener : (Exception) -> Unit) : ImageAnalysis.Analyzer {
 
 
     var scanner = BarcodeScanning.getClient()
@@ -29,42 +31,29 @@ class BarcodeAnalyzer() : ImageAnalysis.Analyzer {
 
             scanner.process(inputImage)
                 .addOnSuccessListener { codes ->
+                    var result=""
                     codes.forEach { barcode ->
-                        //val strin="Format = ${barcode.format}  Value = ${barcode.rawValue}"
-                        //str+="Format = ${barcode.format}  Value = ${barcode.rawValue}"
 
 
-                        var banalyzer= Bundle()
-                        banalyzer.putString("Analyzer_key","Format = ${barcode.format}  Value = ${barcode.rawValue}")
 
-                        var bottomSheetFragment = BottomSheetFragment()
-                        bottomSheetFragment.setArguments(banalyzer)
+
                         Log.d(
                             "BARCODE", """
                             Format = ${barcode.format}
                             Value = ${barcode.rawValue}
                         """.trimIndent()
                         )
-//                        val strin="Format = ${barcode.format}  Value = ${barcode.rawValue}"
-//                        //str+="Format = ${barcode.format}  Value = ${barcode.rawValue}"
-//
-//                        val banalyzer= Bundle()
-//                        banalyzer.putString("Analyzer_key","Format = ${barcode.format}  Value = ${barcode.rawValue}")
-//
-//                        val bottomSheetFragment = BottomSheetFragment()
-//                        bottomSheetFragment.setArguments(banalyzer)
+
+                        result+=" Format = ${barcode.format}  Value = ${barcode.rawValue}"
                         
-                        
-
-
-
-
 
                     }
+                    onSuccessListener(result)
 
 
                 }
                 .addOnFailureListener { ex ->
+                    onErrorListener(ex)
                     Log.e("BARCODE", "Detection failed", ex)
                 }
                 .addOnCompleteListener {

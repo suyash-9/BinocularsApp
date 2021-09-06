@@ -8,7 +8,8 @@ import com.google.mlkit.vision.common.InputImage
 import com.google.mlkit.vision.text.TextRecognition
 import com.google.mlkit.vision.text.latin.TextRecognizerOptions
 
-class TextAnalyzer : ImageAnalysis.Analyzer {
+class TextAnalyzer (private val onSuccessListener : (String) -> Unit,
+                    private val onErrorListener : (Exception) -> Unit): ImageAnalysis.Analyzer {
 
     private val recognizer = TextRecognition.getClient(TextRecognizerOptions.DEFAULT_OPTIONS)
 
@@ -25,15 +26,19 @@ class TextAnalyzer : ImageAnalysis.Analyzer {
 
             recognizer.process(inputImage)
                 .addOnSuccessListener { text ->
+                    var result = ""
                     text.textBlocks.forEach { block ->
                         Log.d(
                             "TEXT", """
                             LINES = ${block.lines.joinToString("\n") { it.text }}
                         """.trimIndent()
                         )
+                        result += block.text
                     }
+                    onSuccessListener(result)
                 }
                 .addOnFailureListener { ex ->
+                    onErrorListener(ex)
                     Log.e("TEXT", "Detection failed", ex)
                 }
                 .addOnCompleteListener {

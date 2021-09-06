@@ -8,7 +8,8 @@ import com.google.mlkit.vision.common.InputImage
 import com.google.mlkit.vision.face.FaceDetection
 import com.google.mlkit.vision.face.FaceDetectorOptions
 
-class FaceDetectAnalyzer : ImageAnalysis.Analyzer {
+class FaceDetectAnalyzer(private val onSuccessListener : (String) -> Unit,
+                         private val onErrorListener : (Exception) -> Unit) : ImageAnalysis.Analyzer {
 
     val detector = FaceDetection.getClient(
         FaceDetectorOptions.Builder()
@@ -18,7 +19,7 @@ class FaceDetectAnalyzer : ImageAnalysis.Analyzer {
             .build()
     )
 
-    @SuppressLint("UnsafeExperimentalUsageError")
+    @SuppressLint("UnsafeExperimentalUsageError", "UnsafeOptInUsageError")
     override fun analyze(imageProxy: ImageProxy) {
 
         Log.d("FACEDETECT", "image analysed")
@@ -31,6 +32,7 @@ class FaceDetectAnalyzer : ImageAnalysis.Analyzer {
 
             detector.process(inputImage)
                 .addOnSuccessListener { faces ->
+                    var result=""
                     Log.d("FACDETECT", "Faces = ${faces.size}")
 
                     faces.forEach {
@@ -39,9 +41,12 @@ class FaceDetectAnalyzer : ImageAnalysis.Analyzer {
                             rightEye ${it.rightEyeOpenProbability}
                             smile ${it.smilingProbability}
                     """.trimIndent())
+                        result+=" FACEDETECT\n leftEye ${it.leftEyeOpenProbability}  rightEye ${it.rightEyeOpenProbability}  smile ${it.smilingProbability} "
                     }
+                    onSuccessListener(result)
                 }
                 .addOnFailureListener { ex ->
+                    onErrorListener(ex)
                     Log.e("FACEDETECT", "Detection failed", ex)
                 }
                 .addOnCompleteListener {
