@@ -16,14 +16,15 @@
         android:layout_height="wrap_content"
         android:id="@+id/showBTN"
         android:text="Show"></Button>
+
     <TextView
+        android:id="@+id/ansView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/ansView"
-        android:hint="Click Start Scan To Show Result"
-        android:layout_marginBottom="10dp"
-        android:layout_marginStart="10dp"
         android:layout_gravity="center_horizontal"
-        ></TextView>
+        android:layout_marginStart="10dp"
+        android:layout_marginBottom="10dp"
+        android:hint="Click Start Scan To Show Result"
+        android:textSize="24sp"></TextView>
 
 </LinearLayout>

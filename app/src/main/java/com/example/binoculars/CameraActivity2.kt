@@ -138,6 +138,8 @@ class CameraActivity2 : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_camera3)
+        supportActionBar!!.title = "Camera X"
+        supportActionBar!!.setDisplayHomeAsUpEnabled(true)
 
         askCameraPermission()
 

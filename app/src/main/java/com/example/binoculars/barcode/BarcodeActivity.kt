@@ -43,6 +43,8 @@ class BarcodeActivity : BaseLensActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        supportActionBar!!.title = "Barcode/QR Code Scanner"
+        supportActionBar!!.setDisplayHomeAsUpEnabled(true)
         var bottomSheetFragment = BottomSheetFragment()
         bottombtn.setOnClickListener {
             bottomSheetFragment.show(supportFragmentManager,"BottomSheetDialog")

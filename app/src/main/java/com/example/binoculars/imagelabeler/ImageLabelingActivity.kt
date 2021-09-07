@@ -33,6 +33,8 @@ class ImageLabelingActivity : BaseLensActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        supportActionBar!!.title = "Image Labeler"
+        supportActionBar!!.setDisplayHomeAsUpEnabled(true)
         val bottomSheetFragment = BottomSheetFragment()
         bottombtn.setOnClickListener {
             bottomSheetFragment.show(supportFragmentManager, "BottomSheetDialog")

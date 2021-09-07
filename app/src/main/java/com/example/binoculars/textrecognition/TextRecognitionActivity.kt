@@ -35,6 +35,8 @@ class TextRecognitionActivity : BaseLensActivity() {
     }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        supportActionBar!!.title = "Text Recognition"
+        supportActionBar!!.setDisplayHomeAsUpEnabled(true)
         val bottomSheetFragment = BottomSheetFragment()
         bottombtn.setOnClickListener {
             bottomSheetFragment.show(supportFragmentManager, "BottomSheetDialog")

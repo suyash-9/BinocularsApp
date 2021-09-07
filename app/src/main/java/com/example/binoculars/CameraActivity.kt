@@ -3,6 +3,7 @@ package com.example.binoculars
 import android.Manifest
 import android.content.Intent
 import android.content.pm.PackageManager.PERMISSION_GRANTED
+import android.graphics.Bitmap
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.MediaStore
@@ -29,6 +30,8 @@ class CameraActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_camera2)
+        supportActionBar!!.title = "Go Back"
+        supportActionBar!!.setDisplayHomeAsUpEnabled(true)
 
 
         takepicbtn.setOnClickListener {
@@ -37,4 +40,15 @@ class CameraActivity : AppCompatActivity() {
         }
 
     }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        if (requestCode == MainActivity.PHOTO_REQ_CODE && resultCode == RESULT_OK) {
+            val imageBitmap = data?.extras?.get(MainActivity.EXTRA_DATA) as Bitmap
+            image.setImageBitmap(imageBitmap)
+            return
+        }
+
+        super.onActivityResult(requestCode, resultCode, data)
+    }
+
 }

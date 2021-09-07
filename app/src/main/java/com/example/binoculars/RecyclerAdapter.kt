@@ -5,6 +5,8 @@ import android.view.LayoutInflater
 import android.view.OnReceiveContentListener
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.Animation
+import android.view.animation.AnimationUtils
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
@@ -48,6 +50,9 @@ class RecyclerAdapter(private val listener: OnItemClickListener) : RecyclerView.
         holder.image.setImageResource(pics[position])
         holder.name.text=name[position]
         holder.desc.text=descs[position]
+
+        //val animation:Animation =AnimationUtils.loadAnimation(this@RecyclerAdapter,android.R.anim.slide_in_left)
+        //holder.itemView.startAnimation()
 
 
 

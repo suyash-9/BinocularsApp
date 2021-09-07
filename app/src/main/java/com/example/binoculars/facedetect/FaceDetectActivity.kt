@@ -33,6 +33,8 @@ class FaceDetectActivity : BaseLensActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        supportActionBar!!.title = "Face Detector"
+        supportActionBar!!.setDisplayHomeAsUpEnabled(true)
         val bottomSheetFragment = BottomSheetFragment()
         bottombtn.setOnClickListener {
             bottomSheetFragment.show(supportFragmentManager, "BottomSheetDialog")

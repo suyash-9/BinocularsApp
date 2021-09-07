@@ -9,7 +9,23 @@
     <androidx.camera.view.PreviewView
         android:id="@+id/previewBarcode"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent" >
+
+<!--        <Button-->
+<!--            android:id="@+id/bottombtn"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="@string/result" />-->
+    </androidx.camera.view.PreviewView>
+        <Button
+            android:id="@+id/bottombtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|right"
+            android:layout_marginRight="15sp"
+            android:layout_marginBottom="12sp"
+            android:text="@string/result" />
+
 
     <Button
         android:layout_margin="10dp"
@@ -18,16 +34,5 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Start Scanner" />
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/bottombtn"
-        android:text="@string/result"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.881"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.925" />
 
 </FrameLayout>

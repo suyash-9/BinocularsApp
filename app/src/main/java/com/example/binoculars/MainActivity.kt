@@ -78,15 +78,7 @@ class MainActivity : AppCompatActivity(),RecyclerAdapter.OnItemClickListener {
         }
     }
 
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        if (requestCode == PHOTO_REQ_CODE && resultCode == RESULT_OK) {
-            val imageBitmap = data?.extras?.get(EXTRA_DATA) as Bitmap
-            //image.setImageBitmap(imageBitmap)
-            return
-        }
 
-        super.onActivityResult(requestCode, resultCode, data)
-    }
 
 
 }
