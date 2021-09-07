@@ -1,4 +1,8 @@
-# BinocularsApp
+#  <p align =center>BinocularsApp</p>
+<p align="center">
+  <img width="200" src="https://github.com/suyash-9/BinocularsApp/blob/main/icon.png" alt="Material Bread logo">
+</p>
+
 ![logo](https://img.shields.io/badge/Android-3DDC84?style=for-the-badge&logo=android&logoColor=white)
 ![logo](	https://img.shields.io/badge/Kotlin-0095D5?&style=for-the-badge&logo=kotlin&logoColor=white)
 
