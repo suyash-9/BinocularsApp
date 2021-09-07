@@ -22,4 +22,9 @@
 ## Tools Used
 * Android Studio IDE
 * Android Version 5.0 or later
+<<<<<<< HEAD
 * ML Kit
+=======
+* ML Kit
+  
+>>>>>>> github/main
