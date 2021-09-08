@@ -18,7 +18,7 @@
      - Identify objects, locations, activities, animal species, products, and more. 
    * Barcode/QR Code Scanning 
      - Scan and process barcodesand QR codes. Supports most standard 1D and 2D formats.
-     - 
+     
 ## Preview
 <p >
   <img width="200" src="https://github.com/suyash-9/BinocularsApp/blob/main/preview1.gif" alt="Material Bread logo">
