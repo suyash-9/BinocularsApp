@@ -21,12 +21,16 @@
      - 
 ## Preview
 <p >
+  <img width="200" src="https://github.com/suyash-9/BinocularsApp/blob/main/preview1.gif" alt="Material Bread logo">
+</p>
+<br>
+<p >
   <img width="200" src="https://github.com/suyash-9/BinocularsApp/blob/main/Screenshots/s1.jpg" alt="Material Bread logo">
   <img width="200" src="https://github.com/suyash-9/BinocularsApp/blob/main/Screenshots/s2.jpg" alt="Material Bread logo">
-  <img width="200" src="https://github.com/suyash-9/BinocularsApp/blob/main/Screenshots/s3.jpg" alt="Material Bread logo"><br>
+  <img width="200" src="https://github.com/suyash-9/BinocularsApp/blob/main/Screenshots/s3.jpg" alt="Material Bread logo">
   <img width="200" src="https://github.com/suyash-9/BinocularsApp/blob/main/Screenshots/s4.jpg" alt="Material Bread logo">
-  <img width="200" src="https://github.com/suyash-9/BinocularsApp/blob/main/Screenshots/s5.jpg" alt="Material Bread logo">
-  <img width="200" src="https://github.com/suyash-9/BinocularsApp/blob/main/Screenshots/s6.jpg" alt="Material Bread logo">
+<!--   <img width="200" src="https://github.com/suyash-9/BinocularsApp/blob/main/Screenshots/s5.jpg" alt="Material Bread logo">
+  <img width="200" src="https://github.com/suyash-9/BinocularsApp/blob/main/Screenshots/s6.jpg" alt="Material Bread logo"> -->
 </p>
 
  
