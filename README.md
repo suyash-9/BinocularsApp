@@ -22,6 +22,7 @@
 ## Preview
 <p >
   <img width="200" src="https://github.com/suyash-9/BinocularsApp/blob/main/preview1.gif" alt="Material Bread logo">
+  <img width="200" src="https://github.com/suyash-9/BinocularsApp/blob/main/preview2.gif" alt="Material Bread logo">
 </p>
 <br>
 <p >
